@@ -847,6 +847,19 @@ img {
   visibility: hidden;
 }
 
+/* ---------------Modal----------------- */
+
+.modal-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-top: 40px;
+  margin-bottom: 12px;
+  color: var(--second-text-color);
+}
+
 /* -----------------Test_____________
 
 .benefits-item::before {
