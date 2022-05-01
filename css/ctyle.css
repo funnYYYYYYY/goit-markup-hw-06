@@ -16,6 +16,7 @@
   --color-svg: #afb1b8;
   --bcg-footer-icon: rgba(255, 255, 255, 0.1);
   --bcg-product-pic: rgba(47, 48, 58, 0.8);
+  --modal-color: rgba(24, 140, 232, 1);
   --padding-top: 94px;
   --padding-bottom: 94px;
   --margin-right: 30px;
@@ -843,12 +844,25 @@ img {
   visibility: hidden;
 }
 
+.close-link {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.modal-icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.close-link:hover .modal-icon,
+.close-link:focus .modal-icon {
+  fill: var(--accent-text-color);
+}
+
 /* --------------------Modal---------------- */
 
 .modal-field {
-  display: flex;
-  text-align: center;
-  justify-content: center;
+  margin-bottom: 10px;
   margin-left: 40px;
   margin-right: 40px;
 }
@@ -859,30 +873,133 @@ img {
   line-height: 1.15;
   text-align: center;
   letter-spacing: 0.03em;
+  margin-top: 40px;
+  margin-bottom: 12px;
 
   color: var(--second-text-color);
 }
 
 .modal-textarea {
-  width: 448px;
+  width: 100%;
   height: 120px;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  background-color: transparent;
+  outline: none;
+  padding-left: 16px;
+  padding-top: 12px;
   resize: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-textarea:focus {
+  border-color: var(--accent-text-color);
+}
+
+.modal-textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-btn {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  outline: none;
+  padding-left: 42px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn:focus {
+  border-color: var(--accent-text-color);
 }
 
 .modal-label {
+  display: block;
+  margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.16;
   letter-spacing: 0.01em;
-  margin-top: 20px;
 
   color: var(--primary-text-color);
 }
 
-.modal-checkbox {
-  margin-left: 52px;
+.modal-label-text {
+  position: relative;
+  margin-left: 36px;
+  display: flex;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+
+  color: var(--primary-text-color);
+}
+
+.modal-img-svg {
+  fill: transparent;
+}
+
+.modal-span {
+  position: absolute;
+  left: -22px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  width: 16px;
+  height: 15px;
+  border: 2px solid black;
+  outline: none;
+  border-radius: 2px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.modal-img {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn:focus + .modal-img {
+  fill: var(--accent-text-color);
+}
+
+.text-license {
+  margin-left: 54px;
+}
+
+.modal-checkbox:checked + .modal-label-text .modal-span {
+  border: none;
+  background-color: var(--accent-text-color);
 }
 
 .link-license {
+  margin-left: 6px;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
   color: var(--accent-text-color);
 }
 
@@ -895,17 +1012,27 @@ img {
   width: 200px;
   height: 50px;
   text-align: center;
-  padding-left: auto;
-  padding-right: auto;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.06em;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  margin-top: 30px;
+  cursor: pointer;
 
   background-color: var(--accent-text-color);
+  color: var(--background-color);
   border: none;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-radius 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-submit:hover,
+.modal-submit:focus {
+  background-color: var(--modal-color);
+  border-radius: 2px;
 }
 
 /* -----------------Test_____________
