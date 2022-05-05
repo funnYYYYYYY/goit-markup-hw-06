@@ -809,6 +809,7 @@ img {
 
 .correct {
   height: 50px;
+  display: flex;
   align-items: center;
 }
 
@@ -816,14 +817,7 @@ img {
   border-color: var(--accent-text-color);
 }
 
-.display-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .svg-form {
-  fill: white;
   margin-left: 10px;
 }
 
