@@ -809,7 +809,6 @@ img {
 
 .correct {
   height: 50px;
-  display: inline-flex;
   align-items: center;
 }
 
@@ -824,6 +823,7 @@ img {
 }
 
 .svg-form {
+  fill: white;
   margin-left: 10px;
 }
 
